@@ -1,0 +1,312 @@
+﻿@{
+    ViewData["Title"] = "CarOut Page";
+}
+
+@using WebTransaction.Models;
+@model AcsTransactionCarOut;
+
+<style> 
+    .form-group {
+        margin-bottom: 10px;
+    }
+</style>
+
+<h1>Car Out Page</h1>
+
+<form method="post" asp-controller="home" 
+    asp-action="PageCarOut" enctype="multipart/form-data">
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>ID</label>
+                    <input type="text" 
+                    class="form-control form-control-sm" asp-for="Id" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>Transaction Date</label>
+                    <input type="datetime-local" 
+                    class="form-control form-control-sm" asp-for="TransactionDate" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>Card Type Id</label>
+                    <input type="text" 
+                    class="form-control form-control-sm" asp-for="CardTypeId" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>Vehicle Type Id</label>
+                    <input type="text" 
+                    class="form-control form-control-sm" asp-for="VehicleTypeId" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>User Id</label>
+                    <input type="text" 
+                    class="form-control form-control-sm" asp-for="UserId" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>Shift Id</label>
+                    <input type="text" 
+                    class="form-control form-control-sm" asp-for="ShiftId" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>Lane Id</label>
+                    <input type="text" 
+                    class="form-control form-control-sm" asp-for="LaneId" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>Station Id</label>
+                    <input type="text" 
+                    class="form-control form-control-sm" asp-for="StationId" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>Plate</label>
+                    <input type="text" 
+                    class="form-control form-control-sm" asp-for="Plate" />
+                </div>
+            </div>
+            <div class="col-3">
+                <!--Lane image-->
+                <div class="form-group mb-3">
+                    <label for="description">Lane Image</label>
+                    <input type="file" class="form-control validate"
+                            font-family:'Times New Roman', Times, serif;
+                                    width:350px"
+                           accept=".jpg, .png" asp-for="LaneImage" />
+                </div>
+            </div>
+            <div class="col-3">
+                <!--Plate image-->
+                <div class="form-group mb-3">
+                    <label for="description">Plate Image</label>
+                    <input type="file" class="form-control validate"
+                            font-family:'Times New Roman', Times, serif;
+                                width:350px"
+                           accept=".jpg, .png" asp-for="PlateImage" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>Note</label>
+                    <input type="text" 
+                    class="form-control form-control-sm" asp-for="Note" />
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>Process Date</label>
+                    <input type="datetime-local" 
+                    class="form-control form-control-sm" asp-for="ProcessDate" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>Partner Id</label>
+                    <input type="text" 
+                    class="form-control form-control-sm" asp-for="PartnerId" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>Transaction Id In</label>
+                    <input type="text" 
+                    class="form-control form-control-sm" asp-for="TransactionIdIn" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>Station Id In</label>
+                    <input type="text" 
+                    class="form-control form-control-sm" asp-for="StationIdIn" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>Lane Id</label>
+                    <input type="text" 
+                    class="form-control form-control-sm" asp-for="LaneIdIn" />
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>Code</label>
+                    <input type="text" 
+                    class="form-control form-control-sm" asp-for="Code" />
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>Transaction Date In</label>
+                    <input type="datetime-local" 
+                    class="form-control form-control-sm" asp-for="TransactionDateIn" />
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>Price</label>
+                    <input type="number" 
+                    class="form-control form-control-sm" asp-for="Price" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>Total</label>
+                    <input type="number" 
+                    class="form-control form-control-sm" asp-for="Total" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>Minutes</label>
+                    <input type="number" 
+                    class="form-control form-control-sm" asp-for="Minutes" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>Barcode</label>
+                    <input type="text" 
+                    class="form-control form-control-sm" asp-for="Barcode" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>Serial No</label>
+                    <input type="text" 
+                    class="form-control form-control-sm" asp-for="SerialNo" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>Invoice No</label>
+                    <input type="text" 
+                    class="form-control form-control-sm" asp-for="InvoiceNo" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>FormNo</label>
+                    <input type="text" 
+                    class="form-control form-control-sm" asp-for="FormNo" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>Serial</label>
+                    <input type="text" 
+                    class="form-control form-control-sm" asp-for="Serial" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>F0</label>
+                    <input type="number" 
+                    class="form-control form-control-sm" asp-for="F0" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>F1</label>
+                    <input type="number" 
+                    class="form-control form-control-sm" asp-for="F1" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>F2</label>
+                    <input type="number" 
+                    class="form-control form-control-sm" asp-for="F2" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>F3</label>
+                    <input type="number" 
+                    class="form-control form-control-sm" asp-for="F3" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>Plate HK</label>
+                    <input type="text" 
+                    class="form-control form-control-sm" asp-for="PlateHk" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>Plate O</label>
+                    <input type="text" 
+                    class="form-control form-control-sm" asp-for="PlateO" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>Create UID</label>
+                    <input type="text" 
+                    class="form-control form-control-sm" asp-for="CreateUid" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group ">
+                    <label>Write UID</label>
+                    <input type="text" 
+                    class="form-control form-control-sm" asp-for="WriteUid" />
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label>IsDeleted</label>
+                    <input id="IsDeleted" name="IsDeleted"
+                           type="checkbox" value="true" asp-for="IsDeleted" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-------->
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary btn-block text-uppercase">
+        <i class="fas fa-check"></i> Add</button>
+    </div>
+</form>

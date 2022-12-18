@@ -1,0 +1,171 @@
+﻿@*{
+    ViewData["Title"] = "Home Page";
+}
+*@
+@using WebTransaction.Models;
+@model AcsTransactionCarIn;
+
+<form method="post" asp-controller="home" 
+    asp-action="index" enctype="multipart/form-data">
+    <div class="form-group mb-3">
+        <label>Id</label>
+        <input type="number" style="padding:10px 18px; 
+            font-family:'Times New Roman', Times, serif;" 
+        name="idCode" id="idCode" asp-for="Id"/>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>Card Id</label>
+        <input type="text" style="padding:10px 18px; 
+            font-family:'Times New Roman', Times, serif;" asp-for="CardId"/>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>Transaction Date</label>
+        <input type="datetime-local" style="padding:10px 18px; 
+            font-family:'Times New Roman', Times, serif;" asp-for="TransactionDate"/>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>Type Card Id</label>
+        <input type="text" style="padding:10px 18px; 
+            font-family:'Times New Roman', Times, serif;" asp-for="CardTypeId"/>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>Vehicle Type Id</label>
+        <input type="text" style="padding:10px 18px; 
+            font-family:'Times New Roman', Times, serif;" asp-for="VehicleTypeId"/>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>User Id</label>
+        <input type="text" style="padding:10px 18px; 
+            font-family:'Times New Roman', Times, serif;" asp-for="UserId"/>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>Shift Id</label>
+        <input type="text" style="padding:10px 18px; 
+            font-family:'Times New Roman', Times, serif;" asp-for="ShiftId"/>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>Lane Id</label>
+        <input type="text" style="padding:10px 18px; 
+            font-family:'Times New Roman', Times, serif;" asp-for="LaneId"/>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>Station Id</label>
+        <input type="text" style="padding:10px 18px; 
+            font-family:'Times New Roman', Times, serif;" asp-for="StationId"/>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>Plate</label>
+        <input type="text" style="padding:10px 18px; 
+            font-family:'Times New Roman', Times, serif;" asp-for="Plate"/>
+    </div>
+
+    <!--Lane image-->
+    <div class="form-group mb-3">
+          <label for="description">Lane Image</label>
+          <input type="file"  class="form-control validate"
+                 style="padding:10px 18px; font-family:'Times New Roman', Times, serif;
+                        width:350px"
+                  accept=".jpg, .png" asp-for="LaneImage"/>
+    </div>
+
+    <!--Plate image-->
+    <div class="form-group mb-3">
+          <label for="description">Plate Image</label>
+          <input type="file"  class="form-control validate"
+                 style="padding:10px 18px; font-family:'Times New Roman', Times, serif;
+                        width:350px"
+                  accept=".jpg, .png" asp-for="PlateImage"/>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>Note</label>
+        <input type="text" style="padding:10px 18px; 
+            font-family:'Times New Roman', Times, serif;" asp-for="Note"/>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>Process Date</label>
+        <input type="datetime-local" style="padding:10px 18px; 
+            font-family:'Times New Roman', Times, serif;" asp-for="ProcessDate"/>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>Partner Id</label>
+        <input type="text" style="padding:10px 18px; 
+            font-family:'Times New Roman', Times, serif;" asp-for="PartnerId"/>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>F0</label>
+        <input type="number" style="padding:10px 18px; 
+            font-family:'Times New Roman', Times, serif;" asp-for="F0"/>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>F1</label>
+        <input type="number" style="padding:10px 18px; 
+            font-family:'Times New Roman', Times, serif;" asp-for="F1"/>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>F2</label>
+        <input type="number" style="padding:10px 18px; 
+            font-family:'Times New Roman', Times, serif;" asp-for="F2"/>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>F3</label>
+        <input type="number" style="padding:10px 18px; 
+            font-family:'Times New Roman', Times, serif;" asp-for="F3"/>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>Plate HK</label>
+        <input type="text" style="padding:10px 18px; 
+            font-family:'Times New Roman', Times, serif;" asp-for="PlateHk"/>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>Plate O</label>
+        <input type="text" style="padding:10px 18px; 
+            font-family:'Times New Roman', Times, serif;" asp-for="PlateO"/>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>Code</label>
+        <input type="text" style="padding:10px 18px; 
+            font-family:'Times New Roman', Times, serif;" asp-for="Code"/>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>Create UID</label>
+        <input type="text" style="padding:10px 18px; 
+            font-family:'Times New Roman', Times, serif;" asp-for="CreateUid"/>
+    </div>
+
+    <div class="form-group mb-3">
+        <label>Write UID</label>
+        <input type="text" style="padding:10px 18px; 
+            font-family:'Times New Roman', Times, serif;" asp-for="WriteUid"/>
+    </div>
+
+    <div class="form-group mb-3">
+        <input id="IsDeleted" name="IsDeleted" 
+            type="checkbox" value="true" asp-for="IsDeleted"/>
+    </div>
+
+     <!-------->
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary btn-block text-uppercase">
+        <i class="fas fa-check"></i> Add</button>
+    </div>
+</form>
